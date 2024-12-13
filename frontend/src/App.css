@@ -73,3 +73,35 @@ input[type="text"]:focus,
   border-color: #444; /* Define a borda para o foco */
   transition: box-shadow 0.2s ease-in-out; /* Transição suave */
 }
+
+/* Remove a alternância de cores nas células */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff !important; /* Fundo branco para linhas ímpares */
+}
+
+/* Fundo branco para linhas pares */
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fff !important; /* Fundo branco para linhas pares */
+}
+
+/* Estilo para o cabeçalho */
+.table thead th {
+  background-color: #f0f0f0 !important; /* Fundo cinza claro */
+  color: #444; /* Cor do texto */
+  height: 60px; /* Altura do cabeçalho */
+  vertical-align: middle; /* Centralização vertical */
+}
+
+/* Estilo das células do corpo */
+.table tbody td {
+  background-color: #fff; /* Fundo branco */
+  height: 70px; /* Altura das células */
+  vertical-align: middle; /* Centraliza o texto verticalmente */
+}
+
+/* Estilo para a tabela geral */
+.table {
+  border-radius: 18px; /* Bordas arredondadas */
+  overflow: hidden; /* Previne overflow */
+}
+

@@ -2,61 +2,85 @@
   {
     "id": 1,
     "name": "Item 1",
-    "description": "Descrição do Item 1"
+    "description": "Descrição do Item 1",
+    "data": "2024-12-12",
+    "subitens": 3
   },
   {
     "id": 2,
     "name": "Item 2",
-    "description": "Descrição do Item 2"
+    "description": "Descrição do Item 2",
+    "data": "2024-12-12",
+    "subitens": 5
   },
   {
     "id": 3,
     "name": "Item 3",
-    "description": "teste"
+    "description": "teste",
+    "data": "2024-12-12",
+    "subitens": 2
   },
   {
     "id": 4,
     "name": "Item 4",
-    "description": "teste"
+    "description": "teste",
+    "data": "2024-12-12",
+    "subitens": 4
   },
   {
     "id": 5,
     "name": "a",
-    "description": "teste"
+    "description": "teste",
+    "data": "2024-12-12",
+    "subitens": 1
   },
   {
     "id": 6,
     "name": "b",
-    "description": "teste"
+    "description": "teste",
+    "data": "2024-12-12",
+    "subitens": 6
   },
   {
     "id": 7,
     "name": "d",
-    "description": "teste"
+    "description": "teste",
+    "data": "2024-12-12",
+    "subitens": 0
   },
   {
     "id": 8,
     "name": "e",
-    "description": "1"
+    "description": "1",
+    "data": "2024-12-12",
+    "subitens": 2
   },
   {
     "id": 9,
     "name": "f",
-    "description": "2"
+    "description": "2",
+    "data": "2024-12-12",
+    "subitens": 3
   },
   {
     "id": 10,
     "name": "g",
-    "description": "3"
+    "description": "3",
+    "data": "2024-12-12",
+    "subitens": 4
   },
   {
     "id": 11,
     "name": "h",
-    "description": "4"
+    "description": "4",
+    "data": "2024-12-12",
+    "subitens": 5
   },
   {
     "id": 12,
     "name": "j",
-    "description": "5"
+    "description": "5",
+    "data": "2024-12-12",
+    "subitens": 1
   }
 ]

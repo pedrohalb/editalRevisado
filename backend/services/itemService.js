@@ -15,7 +15,7 @@ const writeData = (data) => {
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
 };
 
-const getAllItems = (page = 1, limit = 5, search = '', sort = '') => {
+const getAllItems = (page = 1, limit = 5, search = '', sort = '', startDate, endDate) => {
   let items = readData();
 
   // Filtra itens pelo termo de busca (case insensitive)
@@ -25,6 +25,14 @@ const getAllItems = (page = 1, limit = 5, search = '', sort = '') => {
         item.name.toLowerCase().includes(search.toLowerCase()) ||
         item.description.toLowerCase().includes(search.toLowerCase())
     );
+  }
+
+  // Filtra itens por intervalo de datas
+  if (startDate && endDate) {
+    items = items.filter((item) => {
+      const itemDate = new Date(item.data);
+      return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
+    });
   }
 
   // Ordena os itens
@@ -69,11 +77,14 @@ const addItem = ({ name, description }) => {
   // Calcula o próximo ID baseado no maior ID existente
   const nextId = items.length > 0 ? Math.max(...items.map((item) => item.id)) + 1 : 1;
 
-  const newItem = { id: nextId, name, description };
+  // Adiciona atributos data e subitens
+  const currentDate = new Date().toISOString().split('T')[0]; // Data atual no formato YYYY-MM-DD
+  const subitens = Math.floor(Math.random() * 11); // Número aleatório entre 0 e 10
+
+  const newItem = { id: nextId, name, description, data: currentDate, subitens };
   items.push(newItem);
   writeData(items);
 
   return newItem;
 };
-
 module.exports = { getAllItems, deleteItem, addItem };
