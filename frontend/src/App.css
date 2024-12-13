@@ -1,0 +1,75 @@
+/* Estilo geral para números inativos */
+.custom-pagination .page-item .page-link {
+  background-color: transparent; /* Sem fundo para números inativos */
+  color: #444; /* Cor dos números */
+  border: none; /* Sem borda */
+  padding: 0px 0px; /* Espaçamento interno */
+  display: flex; /* Garante área clicável */
+  align-items: center; /* Centraliza o texto verticalmente */
+  justify-content: center; /* Centraliza o texto horizontalmente */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-sizing: content-box; /* Padding não afeta o tamanho visual */
+}
+
+/* Estilo para o item ativo */
+.custom-pagination .page-item.active .page-link {
+  background-color: #fff; /* Fundo branco para ativo */
+  color: #444; /* Texto preto claro */
+  font-weight: bold; /* Negrito para ativo */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 5px 0px; /* Espaçamento interno */
+  box-sizing: content-box; /* Padding não afeta o tamanho visual */
+}
+
+/* Estilo para as setas (primeiro e último itens) */
+.custom-pagination .page-item:first-child .page-link,
+.custom-pagination .page-item:last-child .page-link {
+  background-color: #444; /* Fundo escuro para setas */
+  color: #fff; /* Texto branco */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 5px 0px; /* Aumenta a área clicável */
+  display: flex; /* Garante área clicável */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  box-sizing: content-box; /* Padding não afeta o tamanho visual */
+  cursor: pointer; /* Indica que é clicável */
+}
+
+/* Estilo para itens desabilitados */
+.custom-pagination .page-item.disabled .page-link {
+  color: #ccc; /* Cor desabilitada */
+  background-color: #666; /* Fundo desabilitado */
+  pointer-events: none; /* Sem interação */
+}
+
+/* Estilo de foco para números e setas */
+.custom-pagination .page-item .page-link:focus {
+  outline: none; /* Remove o contorno padrão azul */
+  box-shadow: 0 0 4px #444; /* Sombra personalizada para foco */
+  border-color: #444; /* Define a cor da borda no foco */
+}
+
+/* Estilo de foco para as setas (opcional, se quiser diferenciar) */
+.custom-pagination .page-item:first-child .page-link:focus,
+.custom-pagination .page-item:last-child .page-link:focus {
+  box-shadow: 0 0 4px #444; /* Sombra no mesmo tom do fundo das setas */
+  border-color: #444; /* Ajusta a borda para o foco */
+}
+
+/* Estilo de foco para a barra de pesquisa */
+input[type="text"]:focus,
+.custom-search-bar:focus {
+  outline: none; /* Remove o contorno padrão azul */
+  box-shadow: 0 0 4px #444; /* Sombra personalizada */
+  border-color: #444; /* Define a borda para o foco */
+  transition: box-shadow 0.2s ease-in-out; /* Transição suave */
+}
+
+/* Estilo de foco para o dropdown do filtro */
+.dropdown-toggle:focus {
+  outline: none; /* Remove o contorno padrão azul */
+  box-shadow: 0 0 4px #444; /* Sombra personalizada */
+  border-color: #444; /* Define a borda para o foco */
+  transition: box-shadow 0.2s ease-in-out; /* Transição suave */
+}

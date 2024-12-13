@@ -2,11 +2,12 @@ const itemService = require('../services/itemService');
 
 // Lista todos os itens
 const getItems = (req, res) => {
-  const { page = 1, limit = 5 } = req.query;
+  const { page = 1, limit = 5, search = '', sort = '' } = req.query;
 
-  const result = itemService.getAllItems(page, limit);
+  const result = itemService.getAllItems(page, limit, search, sort);
   res.json(result);
 };
+
 
 // Exclui um item
 const deleteItem = (req, res) => {

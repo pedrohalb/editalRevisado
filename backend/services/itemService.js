@@ -15,9 +15,24 @@ const writeData = (data) => {
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
 };
 
-// Lista todos os itens com paginação
-const getAllItems = (page = 1, limit = 5) => {
-  const items = readData();
+const getAllItems = (page = 1, limit = 5, search = '', sort = '') => {
+  let items = readData();
+
+  // Filtra itens pelo termo de busca (case insensitive)
+  if (search) {
+    items = items.filter(
+      (item) =>
+        item.name.toLowerCase().includes(search.toLowerCase()) ||
+        item.description.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+
+  // Ordena os itens
+  if (sort === 'asc') {
+    items.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sort === 'desc') {
+    items.sort((a, b) => b.name.localeCompare(a.name));
+  }
 
   // Calcula os índices para os itens da página
   const startIndex = (page - 1) * limit;
