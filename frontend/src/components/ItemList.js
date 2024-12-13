@@ -1,40 +1,61 @@
 import React, { useEffect, useState } from 'react';
-import { getItems, addItem, deleteItem } from '../services/api';
+import { getItems, addItem } from '../services/api';
 import { Button, Form, ListGroup } from 'react-bootstrap';
 
-function ItemList() {
+function ItemList({ searchTerm, sortOrder }) {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState({ name: '', description: '' });
+  const [filteredItems, setFilteredItems] = useState([]); // Lista filtrada
 
   useEffect(() => {
     fetchItems();
   }, []);
 
+  useEffect(() => {
+    let updatedItems = [...items];
+
+    // Filtra os itens com base no termo de pesquisa
+    if (searchTerm) {
+      updatedItems = updatedItems.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Ordena os itens com base no filtro selecionado
+    if (sortOrder === 'asc') {
+      updatedItems.sort((a, b) => a.name.localeCompare(b.name)); // Ordem A-Z
+    } else if (sortOrder === 'desc') {
+      updatedItems.sort((a, b) => b.name.localeCompare(a.name)); // Ordem Z-A
+    }
+
+    setFilteredItems(updatedItems);
+  }, [searchTerm, sortOrder, items]);
+
   const fetchItems = async () => {
     try {
       const { data } = await getItems();
-      setItems(data.items || data); // Use `data.items` se a resposta for paginada
+      setItems(data.items || data); // Usa `data.items` se a resposta for paginada
+      setFilteredItems(data.items || data); // Inicializa a lista filtrada
     } catch (error) {
       console.error('Erro ao buscar itens:', error);
       setItems([]); // Garante que `items` seja um array mesmo em caso de erro
+      setFilteredItems([]);
     }
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addItem(newItem);
-    fetchItems();
-    setNewItem({ name: '', description: '' });
-  };
 
-  /*const handleDelete = async (id) => {
-    if (window.confirm('Tem certeza que deseja excluir este item?')) {
-      await deleteItem(id);
-      fetchItems(); // Atualiza a lista após exclusão
+    if (!newItem.name || !newItem.description) {
+      alert('Por favor, preencha todos os campos!');
+      return;
     }
-  };*/
-  
+
+    await addItem(newItem);
+    fetchItems(); // Atualiza a lista após adicionar um item
+    setNewItem({ name: '', description: '' }); // Limpa o formulário
+  };
 
   return (
     <div className="p-4">
@@ -65,18 +86,22 @@ function ItemList() {
         </Button>
       </Form>
 
+      {/* Lista de itens filtrada */}
       <ListGroup className="mt-4">
-        {items.map((item) => (
-          <ListGroup.Item key={item.id}>
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <strong>{item.name}:</strong> {item.description}
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item) => (
+            <ListGroup.Item key={item.id}>
+              <div className="d-flex justify-content-between align-items-center">
+                <div>
+                  <strong>{item.name}:</strong> {item.description}
+                </div>
               </div>
-            </div>
-          </ListGroup.Item>
-        ))}
+            </ListGroup.Item>
+          ))
+        ) : (
+          <p>Nenhum item encontrado.</p>
+        )}
       </ListGroup>
-
     </div>
   );
 }
