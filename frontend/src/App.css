@@ -10,7 +10,7 @@
 .header-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #000;
   margin: 0;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
 
 .header-icon {
   font-size: 24px;
-  color: #333;
+  color: #495057;
   margin-right: 0.5rem;
 }
 
@@ -44,6 +44,7 @@
 .filter-dropdown .dropdown-toggle {
   font-weight: bold;
   font-size: 16px;
+  color: #000
 }
 
 /* Botão de selecionar filtro (Dropdown Button) */
@@ -52,16 +53,16 @@
 
 /* Cor ao passar o mouse */
 .filter-dropdown .dropdown-toggle:hover {
-  background-color: #555 !important; /* Fundo mais claro */
+  background-color: #6C757D!important; /* Fundo mais claro */
   color: #fff !important; /* Texto branco */
 }
 
 /* Cor ao clicar (foco ou ativo) */
 .filter-dropdown .dropdown-toggle:active,
 .filter-dropdown .dropdown-toggle:focus {
-  background-color: #444 !important; /* Fundo escuro */
+  background-color: #495057 !important; /* Fundo escuro */
   color: #fff !important; /* Texto branco */
-  box-shadow: 0 0 4px #444 !important; /* Sombra ao redor */
+  box-shadow: 0 0 4px #495057 !important; /* Sombra ao redor */
   outline: none !important; /* Remove o contorno azul */
   border: none !important; /* Remove a borda */
 }
@@ -69,14 +70,14 @@
 
 /* Estilo para o item selecionado no Dropdown */
 .dropdown-menu .dropdown-item.active {
-  background-color: #444 !important; /* Mesma cor do botão de filtro */
+  background-color: #495057 !important; /* Mesma cor do botão de filtro */
   color: #fff !important; /* Texto branco */
   font-weight: bold !important; /* Negrito */
 }
 
 /* Estilo para itens no estado hover (passar o mouse) */
 .dropdown-menu .dropdown-item:hover {
-  background-color: #555 !important; /* Fundo um pouco mais claro */
+  background-color: #6C757D!important; /* Fundo um pouco mais claro */
   color: #fff !important; /* Texto branco */
   font-weight: bold !important; /* Negrito */
 }
@@ -84,15 +85,15 @@
 /* Estilo geral para itens do Dropdown */
 .dropdown-menu .dropdown-item {
   background-color: #f0f0f0 !important; /* Fundo padrão */
-  color: #444 !important; /* Texto padrão */
+  color: #495057 !important; /* Texto padrão */
   font-weight: normal !important; /* Texto regular */
   transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
 }
 
 .dropdown-toggle:focus {
   outline: none;
-  box-shadow: 0 0 4px #444;
-  border-color: #444;
+  box-shadow: 0 0 4px #495057;
+  border-color: #495057;
   font-weight: bold !important;
   transition: box-shadow 0.2s ease-in-out;
 }
@@ -101,8 +102,8 @@
 .add-item-btn {
   font-size: 16px;
   color: #fff;
-  background-color: #444;
-  border-color: #444;
+  background-color: #495057;
+  border-color: #495057;
   font-weight: bold;
   transition: background-color 0.3s ease, box-shadow 0.2s ease-in-out;
 }
@@ -115,16 +116,16 @@
 
 .add-item-btn:focus {
   outline: none;
-  box-shadow: 0 0 4px #444;
-  border-color: #444;
-  background-color: #555;
+  box-shadow: 0 0 4px #495057;
+  border-color: #495057;
+  background-color: #6C757D;
   color: #fff;
 }
 
 .add-item-btn:active {
-  background-color: #333 !important;
+  background-color: #495057 !important;
   color: #fff !important;
-  border-color: #333 !important;
+  border-color: #495057 !important;
   outline: none;
   box-shadow: none;
 }
@@ -140,7 +141,7 @@
 
 .custom-pagination .page-item .page-link {
   background-color: transparent !important;
-  color: #444 !important;
+  color: #495057 !important;
   border: none !important;
   padding: 5px 12px !important;
   display: flex !important;
@@ -149,11 +150,17 @@
   border-radius: 5px !important;
   font-weight: normal !important;
   box-sizing: content-box !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-pagination .page-item .page-link:hover {
+  background-color: #ccc !important;
+  color: #000 !important;
 }
 
 .custom-pagination .page-item:first-child .page-link,
 .custom-pagination .page-item:last-child .page-link {
-  background-color: #444 !important;
+  background-color: #495057 !important;
   color: #fff !important;
   border-radius: 5px !important;
   padding: 5px 12px !important;
@@ -161,7 +168,7 @@
 
 .custom-pagination .page-item.active .page-link {
   background-color: #f0f0f0 !important;
-  color: #444 !important;
+  color: #495057 !important;
   font-weight: bold !important;
   border: 1px solid #ddd !important;
   border-radius: 5px !important;
@@ -170,20 +177,20 @@
 
 .custom-pagination .page-item.disabled .page-link {
   color: #ccc !important;
-  background-color: #666 !important;
+  background-color: #6C757D !important;
   pointer-events: none;
 }
 
 .custom-pagination .page-item .page-link:focus {
   outline: none !important;
-  box-shadow: 0 0 4px #444 !important;
-  border-color: #444 !important;
+  box-shadow: 0 0 4px #495057 !important;
+  border-color: #495057 !important;
 }
 
 .custom-pagination .page-item:first-child .page-link:focus,
 .custom-pagination .page-item:last-child .page-link:focus {
-  box-shadow: 0 0 4px #444 !important;
-  border-color: #444 !important;
+  box-shadow: 0 0 4px #495057 !important;
+  border-color: #495057 !important;
 }
 
 /* TABLE */
@@ -194,7 +201,7 @@
 
 .table thead th {
   background-color: #f0f0f0 !important;
-  color: #444;
+  color: #495057;
   height: 40px;
   vertical-align: middle;
 }
@@ -206,7 +213,7 @@
 }
 
 .table-btn-subitens {
-  background-color: #f0f0f0 !important;
+  background-color: #ADB5BD !important;
   color: #000 !important;
   font-weight: bold !important;
   border: none !important;
@@ -218,7 +225,7 @@
 
 /* Estilo para o quadradinho dos números de subitens */
 .subitens-number {
-  background-color: #d6d6d6; /* Tom de cinza mais escuro */
+  background-color: #868E96; /* Tom de cinza mais escuro */
   color: #000; /* Texto preto */
   font-weight: bold; /* Texto em negrito */
   border-radius: 4px; /* Bordas arredondadas */
@@ -229,13 +236,34 @@
 
 
 .table-btn-editar {
-  background-color: #444 !important;
+  background-color: #495057 !important;
   color: #fff !important;
   font-weight: bold !important;
   border: 1px solid #ccc !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease-in-out;
+}
+
+.table-btn-editar:hover {
+  background-color: #ccc !important;
+  color: #000 !important;
+  border-color: #ccc !important;
+}
+
+.table-btn-editar:focus {
+  outline: none !important;
+  box-shadow: 0 0 4px #495057 !important;
+  border-color: #495057 !important;
+}
+
+.table-btn-editar:active {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border-color: #495057 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .table th:nth-child(1) {
@@ -264,7 +292,110 @@
 input[type="text"]:focus,
 .custom-search-bar:focus {
   outline: none;
-  box-shadow: 0 0 4px #444;
-  border-color: #444;
+  box-shadow: 0 0 4px #495057;
+  border-color: #495057;
   transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #495057;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  z-index: 1;
+}
+
+.sidebar.expanded {
+  width: 200px;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Botão de alternar (toggle) */
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+}
+
+.menu-item:hover {
+  background-color: #6C757D;
+}
+
+.menu-item.active {
+  background-color: #6C757D;
+}
+
+/* Botão de Sair */
+.logout-button {
+  margin-top: auto;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #6C757D;
+}
+
+/* Conteúdo principal */
+.main-content {
+  margin-left: 200px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.collapsed {
+  margin-left: 80px;
+}
+
+/* Botão de Sair */
+.logout-button {
+  margin-top: auto; /* Alinha ao final */
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #6C757D; /* Cinza escuro ao passar o mouse */
+  color: #fff;
 }
