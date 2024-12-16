@@ -1,107 +1,270 @@
-/* Estilo geral para números inativos */
+/* HEADER */
+.header {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  font-size: 24px;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 40px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  max-width: 250px;
+  flex-shrink: 0;
+}
+
+.search-icon {
+  background-color: #f0f0f0;
+  border: none;
+}
+
+/* FILTER DROPDOWN */
+.filter-dropdown .dropdown-toggle {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Botão de selecionar filtro (Dropdown Button) */
+
+/* Cor padrão do botão */
+
+/* Cor ao passar o mouse */
+.filter-dropdown .dropdown-toggle:hover {
+  background-color: #555 !important; /* Fundo mais claro */
+  color: #fff !important; /* Texto branco */
+}
+
+/* Cor ao clicar (foco ou ativo) */
+.filter-dropdown .dropdown-toggle:active,
+.filter-dropdown .dropdown-toggle:focus {
+  background-color: #444 !important; /* Fundo escuro */
+  color: #fff !important; /* Texto branco */
+  box-shadow: 0 0 4px #444 !important; /* Sombra ao redor */
+  outline: none !important; /* Remove o contorno azul */
+  border: none !important; /* Remove a borda */
+}
+
+
+/* Estilo para o item selecionado no Dropdown */
+.dropdown-menu .dropdown-item.active {
+  background-color: #444 !important; /* Mesma cor do botão de filtro */
+  color: #fff !important; /* Texto branco */
+  font-weight: bold !important; /* Negrito */
+}
+
+/* Estilo para itens no estado hover (passar o mouse) */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #555 !important; /* Fundo um pouco mais claro */
+  color: #fff !important; /* Texto branco */
+  font-weight: bold !important; /* Negrito */
+}
+
+/* Estilo geral para itens do Dropdown */
+.dropdown-menu .dropdown-item {
+  background-color: #f0f0f0 !important; /* Fundo padrão */
+  color: #444 !important; /* Texto padrão */
+  font-weight: normal !important; /* Texto regular */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 4px #444;
+  border-color: #444;
+  font-weight: bold !important;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* ADD ITEM BUTTON */
+.add-item-btn {
+  font-size: 16px;
+  color: #fff;
+  background-color: #444;
+  border-color: #444;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease-in-out;
+}
+
+.add-item-btn:hover {
+  background-color: #ccc;
+  color: #000;
+  border-color: #ccc;
+}
+
+.add-item-btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px #444;
+  border-color: #444;
+  background-color: #555;
+  color: #fff;
+}
+
+.add-item-btn:active {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+  outline: none;
+  box-shadow: none;
+}
+
+/* PAGINATION */
+.custom-pagination {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin: 0;
+  gap: 8px;
+}
+
 .custom-pagination .page-item .page-link {
-  background-color: transparent; /* Sem fundo para números inativos */
-  color: #444; /* Cor dos números */
-  border: none; /* Sem borda */
-  padding: 0px 0px; /* Espaçamento interno */
-  display: flex; /* Garante área clicável */
-  align-items: center; /* Centraliza o texto verticalmente */
-  justify-content: center; /* Centraliza o texto horizontalmente */
-  border-radius: 5px; /* Bordas arredondadas */
-  box-sizing: content-box; /* Padding não afeta o tamanho visual */
+  background-color: transparent !important;
+  color: #444 !important;
+  border: none !important;
+  padding: 5px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 5px !important;
+  font-weight: normal !important;
+  box-sizing: content-box !important;
 }
 
-/* Estilo para o item ativo */
-.custom-pagination .page-item.active .page-link {
-  background-color: #fff; /* Fundo branco para ativo */
-  color: #444; /* Texto preto claro */
-  font-weight: bold; /* Negrito para ativo */
-  border-radius: 5px; /* Bordas arredondadas */
-  padding: 5px 0px; /* Espaçamento interno */
-  box-sizing: content-box; /* Padding não afeta o tamanho visual */
-}
-
-/* Estilo para as setas (primeiro e último itens) */
 .custom-pagination .page-item:first-child .page-link,
 .custom-pagination .page-item:last-child .page-link {
-  background-color: #444; /* Fundo escuro para setas */
-  color: #fff; /* Texto branco */
-  border: none; /* Sem borda */
-  border-radius: 5px; /* Bordas arredondadas */
-  padding: 5px 0px; /* Aumenta a área clicável */
-  display: flex; /* Garante área clicável */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  box-sizing: content-box; /* Padding não afeta o tamanho visual */
-  cursor: pointer; /* Indica que é clicável */
+  background-color: #444 !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+  padding: 5px 12px !important;
 }
 
-/* Estilo para itens desabilitados */
+.custom-pagination .page-item.active .page-link {
+  background-color: #f0f0f0 !important;
+  color: #444 !important;
+  font-weight: bold !important;
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+  padding: 3px 10px !important;
+}
+
 .custom-pagination .page-item.disabled .page-link {
-  color: #ccc; /* Cor desabilitada */
-  background-color: #666; /* Fundo desabilitado */
-  pointer-events: none; /* Sem interação */
+  color: #ccc !important;
+  background-color: #666 !important;
+  pointer-events: none;
 }
 
-/* Estilo de foco para números e setas */
 .custom-pagination .page-item .page-link:focus {
-  outline: none; /* Remove o contorno padrão azul */
-  box-shadow: 0 0 4px #444; /* Sombra personalizada para foco */
-  border-color: #444; /* Define a cor da borda no foco */
+  outline: none !important;
+  box-shadow: 0 0 4px #444 !important;
+  border-color: #444 !important;
 }
 
-/* Estilo de foco para as setas (opcional, se quiser diferenciar) */
 .custom-pagination .page-item:first-child .page-link:focus,
 .custom-pagination .page-item:last-child .page-link:focus {
-  box-shadow: 0 0 4px #444; /* Sombra no mesmo tom do fundo das setas */
-  border-color: #444; /* Ajusta a borda para o foco */
+  box-shadow: 0 0 4px #444 !important;
+  border-color: #444 !important;
 }
 
-/* Estilo de foco para a barra de pesquisa */
+/* TABLE */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: #f0f0f0 !important;
+  color: #444;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.table tbody td {
+  background-color: #fff;
+  height: 80px !important;
+  vertical-align: middle !important;
+}
+
+.table-btn-subitens {
+  background-color: #f0f0f0 !important;
+  color: #000 !important;
+  font-weight: bold !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem;
+}
+
+/* Estilo para o quadradinho dos números de subitens */
+.subitens-number {
+  background-color: #d6d6d6; /* Tom de cinza mais escuro */
+  color: #000; /* Texto preto */
+  font-weight: bold; /* Texto em negrito */
+  border-radius: 4px; /* Bordas arredondadas */
+  padding: 2px 6px; /* Espaçamento interno */
+  display: inline-block; /* Garante que seja um quadrado ao redor do número */
+  text-align: center; /* Centraliza o texto */
+}
+
+
+.table-btn-editar {
+  background-color: #444 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: 1px solid #ccc !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.table th:nth-child(1) {
+  width: 40%;
+}
+
+.table th:nth-child(2) {
+  width: 10%;
+}
+
+.table th:nth-child(3) {
+  width: 10%;
+}
+
+.table th:nth-child(4) {
+  width: 5%;
+}
+
+/* REMOVE ALTERNATING COLORS IN TABLE */
+.table-striped tbody tr:nth-of-type(odd),
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #fff !important;
+}
+
+/* INPUT FOCUS */
 input[type="text"]:focus,
 .custom-search-bar:focus {
-  outline: none; /* Remove o contorno padrão azul */
-  box-shadow: 0 0 4px #444; /* Sombra personalizada */
-  border-color: #444; /* Define a borda para o foco */
-  transition: box-shadow 0.2s ease-in-out; /* Transição suave */
+  outline: none;
+  box-shadow: 0 0 4px #444;
+  border-color: #444;
+  transition: box-shadow 0.2s ease-in-out;
 }
-
-/* Estilo de foco para o dropdown do filtro */
-.dropdown-toggle:focus {
-  outline: none; /* Remove o contorno padrão azul */
-  box-shadow: 0 0 4px #444; /* Sombra personalizada */
-  border-color: #444; /* Define a borda para o foco */
-  transition: box-shadow 0.2s ease-in-out; /* Transição suave */
-}
-
-/* Remove a alternância de cores nas células */
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #fff !important; /* Fundo branco para linhas ímpares */
-}
-
-/* Fundo branco para linhas pares */
-.table-striped tbody tr:nth-of-type(even) {
-  background-color: #fff !important; /* Fundo branco para linhas pares */
-}
-
-/* Estilo para o cabeçalho */
-.table thead th {
-  background-color: #f0f0f0 !important; /* Fundo cinza claro */
-  color: #444; /* Cor do texto */
-  height: 60px; /* Altura do cabeçalho */
-  vertical-align: middle; /* Centralização vertical */
-}
-
-/* Estilo das células do corpo */
-.table tbody td {
-  background-color: #fff; /* Fundo branco */
-  height: 70px; /* Altura das células */
-  vertical-align: middle; /* Centraliza o texto verticalmente */
-}
-
-/* Estilo para a tabela geral */
-.table {
-  border-radius: 18px; /* Bordas arredondadas */
-  overflow: hidden; /* Previne overflow */
-}
-
