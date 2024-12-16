@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { getItems, addItem } from '../services/api';
+import { getItems } from '../services/api';
 import Sidebar from '../components/sideBar';
 import Header from '../components/Header';
 import ItemList from '../components/ItemList';
-import '../App.css'; // Certifique-se de importar o CSS global
+import '../App.css';
 
 const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,6 +11,7 @@ const HomePage = () => {
   const [items, setItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
 
   useEffect(() => {
     fetchItems(currentPage, searchTerm, sortOrder);
@@ -40,11 +41,25 @@ const HomePage = () => {
   };
 
   return (
-    //<div style={{ display: 'flex' }}>
-      //<Sidebar />
-      <div style={{ backgroundColor: '#f0f0f0', minHeight: '100vh', padding: '3rem', flexGrow: 1 }}>
-        <div style={{ backgroundColor: '#fff', borderRadius: '10px', padding: '2rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-          {/* Header */}
+    <div style={{ display: 'flex' }}>
+      <Sidebar onToggle={(expanded) => setIsSidebarExpanded(expanded)} />
+      <div
+        className={`main-content ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}
+        style={{
+          backgroundColor: '#f0f0f0',
+          minHeight: '100vh',
+          padding: '3rem',
+          flexGrow: 1,
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: '#fff',
+            borderRadius: '10px',
+            padding: '2rem',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+        >
           <Header
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -55,12 +70,10 @@ const HomePage = () => {
             totalPages={totalPages}
             handlePageChange={handlePageChange}
           />
-
-          {/* Lista de Itens */}
           <ItemList items={items} />
         </div>
       </div>
-    //</div>
+    </div>
   );
 };
 
