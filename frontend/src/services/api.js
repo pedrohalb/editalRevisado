@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/api/items',
+  baseURL: 'http://localhost:3001/api/items',
 });
 
 // Adiciona suporte a termo de busca e ordenação
