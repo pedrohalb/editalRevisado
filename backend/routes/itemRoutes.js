@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.get('/', getItems);
 router.post('/', addItem);
-router.delete('/:id', deleteItem); // Rota para exclusão
+router.delete('/:id', deleteItem);
 
 module.exports = router;

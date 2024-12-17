@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const fetchItems = async (page, search, sort) => {
     try {
-      const { data } = await getItems(page, 11, search, sort);
+      const { data } = await getItems(page, 14, search, sort);
       setItems(data.items);
       setTotalPages(data.totalPages);
     } catch (error) {
