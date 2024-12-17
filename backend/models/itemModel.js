@@ -38,8 +38,8 @@ const ItemModel = {
   
     try {
       // Executa a consulta
-      console.log('Query SQL:', query); // Log para depuração
-      console.log('Parâmetros:', params);
+      /*console.log('Query SQL:', query); // Log para depuração
+      console.log('Parâmetros:', params);*/
   
       const [items] = await db.execute(query, params);
 
