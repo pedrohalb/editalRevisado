@@ -413,12 +413,13 @@ input[type="text"]:focus,
 @media (max-width: 1200px) {
   .header-controls {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 0.5rem;
   }
 
   .search-bar {
     max-width: 200px;
+    text-align: left;
   }
 
   .table th:nth-child(1) {
@@ -431,20 +432,28 @@ input[type="text"]:focus,
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    text-align: left;
   }
 
+  .header-title,
   .header-controls {
-    flex-direction: column;
+    width: 100%; /* Ocupa toda a largura */
+    justify-content: flex-start; /* Alinha itens horizontalmente à esquerda */
     align-items: flex-start;
+  }
+
+  .header-title {
+    text-align: left;
   }
 
   .filter-dropdown,
   .add-item-btn {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .search-bar {
+    text-align: left;
     width: 100%;
   }
 
@@ -582,5 +591,28 @@ input[type="text"]:focus,
     .search-bar {
       width: 100%;
     }
+  }
+}
+
+/* Sidebar sempre expandida em telas menores */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+  }
+
+  .sidebar.expanded {
+    width: 100% !important;
+  }
+
+  .sidebar.collapsed {
+    width: 100% !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .toggle-button {
+    display: none; /* Esconde o botão de alternar */
   }
 }
