@@ -1,5 +1,6 @@
 import React from 'react';
 import { InputGroup, Form, DropdownButton, Dropdown, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; // Importe o hook
 import PaginationControl from './PaginationControl';
 import '../App.css'; // Certifique-se de importar o CSS global
 
@@ -13,6 +14,12 @@ const Header = ({
   totalPages,
   handlePageChange,
 }) => {
+  const navigate = useNavigate(); // Inicialize o hook
+
+  const handleAddItemClick = () => {
+    navigate('/single-edital'); // Redirecione para a nova página
+  };
+
   return (
     <div className="header d-flex justify-content-between align-items-center">
       {/* Título à esquerda */}
@@ -56,7 +63,11 @@ const Header = ({
         </DropdownButton>
 
         {/* Botão de adicionar item */}
-        <Button variant="primary" className="add-item-btn">
+        <Button
+          variant="primary"
+          className="add-item-btn"
+          onClick={handleAddItemClick} // Adicione o evento de clique
+        >
           Adicionar Item <i className="fas fa-plus ms-2" />
         </Button>
       </div>

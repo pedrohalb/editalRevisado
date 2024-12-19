@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import ItemsPage from './pages/ItemsPage';
+import DefaultEdital from './pages/DefaultEdital';
+import SingleEdital from './pages/SingleEdital'; // Importe a nova página
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/items" element={<ItemsPage />} />
+        <Route path="/" element={<DefaultEdital />} />
+        <Route path="/single-edital" element={<SingleEdital />} /> {/* Nova rota */}
       </Routes>
     </Router>
   );

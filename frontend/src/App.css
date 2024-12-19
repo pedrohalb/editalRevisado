@@ -202,6 +202,152 @@
   border-color: #495057 !important;
 }
 
+/* HEADER SINGLE */
+.header-single {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+/* HEADER SINGLE CONTROLS */
+.header-single-controls {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  gap: 1rem; /* Espaçamento entre os elementos */
+  justify-content: flex-end; /* Alinha à direita */
+}
+
+.header-single-top {
+  display: flex;
+  align-items: center; /* Alinhamento vertical */
+  justify-content: flex-start;
+  gap: 1.5rem; /* Espaço entre status e campo de nome */
+  width: 100%;
+}
+
+.header-single-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* Espaçamento entre label e botão */
+  min-width: 80px; /* Define uma largura mínima */
+}
+
+.header-single-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #495057;
+}
+
+/* Estilização do quadradinho branco no botão de status */
+.status-toggle {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  background-color: #6C757D;
+  border: none;
+  border-radius: 5px; /* Bordas arredondadas para botão estilo "switch" */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.status-toggle::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px; /* Início na esquerda */
+  width: 30px;
+  height: 30px;
+  background-color: #fff; /* Quadrado branco */
+  border-radius: 5px; /* Deixa o quadrado como círculo */
+  transition: left 0.3s ease; /* Transição suave do movimento */
+}
+
+.status-toggle.active {
+  background-color: #28a745; /* Verde para ativado */
+}
+
+.status-toggle.active::before {
+  left: 45px; /* Move para a direita */
+}
+
+.header-single-name {
+  flex-grow: 1; /* Permite que o campo de nome ocupe o espaço restante */
+}
+
+.header-single-name input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-single-name input:focus {
+  outline: none;
+  border-color: #495057;
+  box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+}
+
+.header-single-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem; /* Espaçamento entre as seções */
+}
+
+.header-single-title-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaço entre o ícone e o título */
+  margin-left: 1rem; /* Move o título e ícone levemente para a direita */
+}
+
+/* Estilização do ícone ao lado do título */
+.header-icon {
+  font-size: 1rem; /* Tamanho do ícone */
+  color: #495057; /* Cor do ícone */
+}
+
+.add-item-btn {
+  font-size: 16px;
+  color: #fff;
+  background-color: #343A40;
+  border-color: #343A40;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease-in-out;
+  min-width: 150px; /* Define largura mínima */
+  text-align: center; /* Centraliza texto */
+}
+
+.add-item-btn:hover {
+  background-color: #ccc;
+  color: #000;
+  border-color: #ccc;
+}
+
+.add-item-btn:focus {
+  outline: none;
+  box-shadow: 0 0 4px #495057;
+  border-color: #495057;
+  background-color: #6C757D;
+  color: #fff;
+}
+
+.add-item-btn:active {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border-color: #495057 !important;
+  outline: none;
+  box-shadow: none;
+}
+
 /* TABLE */
 .table {
   border-radius: 10px;
@@ -409,6 +555,184 @@ input[type="text"]:focus,
   color: #fff;
 }
 
+/*TABELA DE SINGLEE*/
+/* Estilo para células de tópicos */
+.topics-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0f0f0; /* Cor de fundo do quadrado */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-weight: bold; /* Texto em negrito */
+  max-width: 70px; /* Define um limite de largura */
+} 
+
+/* Estilo para o número dentro da célula */
+.topics-number {
+  color: #495057; /* Cor do número */
+}
+
+/* Estilo para o ícone em Tópicos Ativos */
+.topics-cell .fa-check-circle {
+  color: #495057; /* Verde para ícone de confirmação */
+  font-size: 0.9rem; /* Tamanho do ícone */
+  transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+.topics-cell .fa-circle {
+  color: #495057; /* Verde para ícone de confirmação */
+  font-size: 0.9rem; /* Tamanho do ícone */
+  transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+/* Estilo para botão de editar */
+.table-btn-editar {
+  background-color: #495057 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: 1px solid #ccc !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease-in-out;
+}
+
+.table-btn-editar:hover {
+  background-color: #ccc !important;
+  color: #000 !important;
+  border-color: #ccc !important;
+}
+
+.table-btn-editar:focus {
+  outline: none !important;
+  box-shadow: 0 0 4px #495057 !important;
+  border-color: #495057 !important;
+}
+
+.table-btn-editar:active {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border-color: #495057 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.table-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaçamento entre os botões */
+}
+
+/* Estilo para botão de deletar */
+.table-btn-delete {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table-btn-delete:hover {
+  background-color: #ccc !important;
+  color: #fff !important;
+}
+
+.table th:nth-child(1) {
+  width: 40%;
+}
+
+.table th:nth-child(2) {
+  width: 10%;
+}
+
+.table th:nth-child(3) {
+  width: 10%;
+}
+
+.table th:nth-child(4) {
+  width: 10%;
+}
+
+/* RODAPÉ CONFIGURAÇÕES */
+.footer-config {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.footer-config-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057; /* Padrão de texto */
+}
+
+.footer-config-title i {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  color: #495057;
+}
+
+/* Botões do rodapé */
+.footer-config-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-config-button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.footer-config-button-save {
+  background-color: #495057;
+  color: #fff;
+  border: none;
+}
+
+.footer-config-button-save:hover {
+  background-color: #f0f0f0;
+}
+
+.footer-config-button-save:active {
+  background-color: #f0f0f0 !important; /* Cor ao clicar */
+}
+
+.footer-config-button-cancel {
+  background-color: #f0f0f0;
+  color: #495057;
+  border: none;
+}
+
+.footer-config-button-cancel:hover {
+  background-color: #f0f0f0;
+}
+
+.footer-config-button-cancel:active {
+  background-color: #f0f0f0 !important; /* Cor ao clicar */
+}
+
 /* RESPONSIVIDADE GERAL */
 @media (max-width: 1200px) {
   .header-controls {
@@ -468,6 +792,71 @@ input[type="text"]:focus,
   .main-content {
     margin-left: 150px;
     padding: 1rem;
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+  .header-single-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-single-name {
+    width: 100%;
+  }
+
+  .add-item-btn {
+    width: 100%;
+  }
+
+  .header-single-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .header-single-controls {
+      flex-direction: column; /* Empilha os elementos em telas menores */
+      align-items: flex-start; /* Alinha à esquerda */
+      gap: 0.5rem;
+    }
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .header-single-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-single-name {
+    width: 100%; /* Campo de nome ocupa toda a largura */
+  }
+
+  .add-item-btn {
+    width: 100%;
+  }
+
+  .header-single-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-single-title {
+    font-size: 1.5rem;
+  }
+
+  .add-item-btn {
+    font-size: 14px;
+    padding: 0.5rem;
   }
 }
 
@@ -614,5 +1003,24 @@ input[type="text"]:focus,
 
   .toggle-button {
     display: none; /* Esconde o botão de alternar */
+  }
+}
+
+/* Responsividade para o rodapé */
+@media (max-width: 768px) {
+  .footer-config {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-config-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-config-button {
+    flex: 1; /* Ocupa o espaço disponível */
+    text-align: center;
   }
 }
