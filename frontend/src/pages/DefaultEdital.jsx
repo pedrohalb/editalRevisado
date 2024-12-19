@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getItems } from '../services/api';
-import Sidebar from '../components/sideBar';
+import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import ItemList from '../components/ItemList';
 import '../App.css';
 
-const HomePage = () => {
+const DefaultEdital= () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [items, setItems] = useState([]);
@@ -77,4 +77,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default DefaultEdital;
