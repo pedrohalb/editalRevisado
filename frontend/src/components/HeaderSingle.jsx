@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import PaginationControl from './PaginationControl';
 import '../App.css';
 
-const HeaderSingle = ({ title, currentPage, totalPages, handlePageChange, showIcon }) => {
+const HeaderSingle = ({ title, currentPage, totalPages, handlePageChange, showIcon, onAddClick }) => {
   const [status, setStatus] = useState(false);
 
   const toggleStatus = () => {
@@ -46,7 +46,7 @@ const HeaderSingle = ({ title, currentPage, totalPages, handlePageChange, showIc
           />
 
           {/* Botão de Adicionar Item */}
-          <Button variant="primary" className="add-item-btn">
+          <Button variant="primary" className="add-item-btn" onClick={onAddClick}>
             Adicionar <i className="fas fa-plus ms-2" />
           </Button>
         </div>

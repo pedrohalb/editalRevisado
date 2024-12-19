@@ -119,7 +119,7 @@
 
 .add-item-btn:hover {
   background-color: #ccc;
-  color: #000;
+  color: #fff;
   border-color: #ccc;
 }
 
@@ -328,7 +328,7 @@
 
 .add-item-btn:hover {
   background-color: #ccc;
-  color: #000;
+  color: #fff;
   border-color: #ccc;
 }
 
@@ -600,7 +600,7 @@ input[type="text"]:focus,
 
 .table-btn-editar:hover {
   background-color: #ccc !important;
-  color: #000 !important;
+  color: #fff !important;
   border-color: #ccc !important;
 }
 
@@ -726,12 +726,295 @@ input[type="text"]:focus,
 }
 
 .footer-config-button-cancel:hover {
-  background-color: #f0f0f0;
+  background-color: #6C757D!important; /* Fundo mais claro */
+  color: #fff !important; /* Texto branco */
 }
 
 .footer-config-button-cancel:active {
   background-color: #f0f0f0 !important; /* Cor ao clicar */
 }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #495057; /* Cor padrão do texto */
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #495057; /* Cor do ícone */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #495057; /* Vermelho ao passar o mouse */
+}
+
+/* Corpo do Modal */
+.modal-body {
+  margin-top: 1rem;
+  max-height: 400px;
+  overflow-y: auto; /* Permite rolagem se houver muitos itens */
+}
+
+.search-bar {
+  max-width: 100%;
+  flex-shrink: 0;
+  min-width: 150px; /* Define largura mínima */
+  text-align: center; /* Centraliza texto */
+}
+
+.search-icon {
+  background-color: #f0f0f0;
+  border: none;
+}
+
+/* Ícone ao lado esquerdo da matéria */
+.materia-icon {
+  font-size: 1.2rem;
+  color: #6c757d; /* Cor padrão (cinza) */
+  margin-right: 0.5rem; /* Espaçamento entre o ícone e o nome */
+  transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.materia-item.selected .materia-icon {
+  color: #28a745; /* Verde para itens selecionados */
+}
+
+/* Ícone ao passar o mouse */
+.materia-item:hover .materia-icon {
+  color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+.materias-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Lista de matérias */
+.materias-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada item na lista */
+.materia-item {
+  display: flex;
+  justify-content: space-between; /* Ícone e nome na esquerda, tópicos na direita */
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #f9f9f9; /* Fundo claro */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.materia-item:hover {
+  background: #f0f0f0; /* Fundo ao passar o mouse */
+}
+
+.materia-item.selected {
+  background: #e0ffe0; /* Fundo verde claro para itens selecionados */
+  border: 1px solid #28a745; /* Destaque de borda */
+}
+
+/* Container para o ícone e nome */
+.materia-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaçamento entre o ícone e o nome */
+}
+
+/* Ícone de seleção (círculo vazio e círculo preenchido) */
+.materia-icon {
+  font-size: 1.5rem; /* Tamanho do ícone */
+  color: transparent; /* Faz o meio do círculo vazio */
+  border: 2px solid #6c757d; /* Borda cinza padrão */
+  border-radius: 50%; /* Forma de círculo */
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+.materia-item.selected .materia-icon {
+  color: #495057; /* Faz o interior do ícone selecionado branco */
+  background-color: #fff!important; /* Fundo verde para ícone selecionado */
+  border-color: #495057!important; /* Borda verde */
+}
+
+.materia-item:hover .materia-icon {
+  color:#495057;
+  border-color: #495057!important;
+  background-color: #495057!important; /* Verde mais escuro ao passar o mouse */
+}
+
+.materia-nome {
+  font-weight: bold;
+  color: #495057;
+}
+
+.materia-topicos {
+  font-size: 0.9rem;
+  color: #6c757d; /* Cinza padrão */
+}
+
+.topics-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+.topics-number {
+  font-weight: bold;
+  color: #495057;
+}
+
+/*.select-all-button {
+  display: block;
+  margin: 0 auto 1rem;
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.select-all-button:hover {
+  background: #5a6268;
+}
+
+.select-all-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px #6c757d;
+}*/
+
+/* Rodapé do Modal */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Botão Salvar */
+.save-button {
+  background-color: #495057;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.save-button:hover {
+  background-color: #f0f0f0;
+}
+
+.save-button:active {
+  background-color: #f0f0f0 !important; /* Cor ao clicar */
+}
+
+.save-button:disabled {
+  background: #ccc; /* Fundo cinza claro para desabilitado */
+  color: #666; /* Texto cinza escuro */
+  cursor: not-allowed; /* Cursor não permitido */
+}
+
+/* Botão Cancelar */
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #495057;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cancel-button:hover {
+  background-color: #6C757D!important; /* Fundo mais claro */
+  color: #fff !important; /* Texto branco */
+}
+
+.cancel-button:active {
+  background-color: #f0f0f0 !important; /* Cor ao clicar */
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .modal-content {
+    width: 100%;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .materia-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .materia-topicos {
+    margin-top: 0.5rem;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cancel-button, .save-button {
+    width: 100%; /* Botões ocupam toda a largura */
+  }
+}
+
 
 /* RESPONSIVIDADE GERAL */
 @media (max-width: 1200px) {

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { getItems2 } from '../services/api';
+import { getItems2, getItems3 } from '../services/api';
 import Sidebar from '../components/SideBar';
 import HeaderSingle from '../components/HeaderSingle';
 import ItemListSingleEdital from '../components/ItemListSingleEdital';
 import '../App.css';
 import RodapeConfig from '../components/RodapeConfig'; // Importe o novo componente
+import ModalAdicionarMaterias from '../components/ModalAdicionarMaterias';
 
 const SingleEdital= () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +14,8 @@ const SingleEdital= () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [materias, setMaterias] = useState([]);
 
   useEffect(() => {
     fetchItems(currentPage, searchTerm, sortOrder);
@@ -28,6 +31,16 @@ const SingleEdital= () => {
     }
   };
 
+    // Função para buscar matérias para o modal
+  const fetchMaterias = async () => {
+    try {
+      const { data } = await getItems3(1, 100, '', ''); // Carrega até 100 matérias para o modal
+      setMaterias(data.items);
+    } catch (error) {
+      console.error('Erro ao buscar matérias para o modal:', error);
+    }
+  };
+
   const handlePageChange = (page) => setCurrentPage(page);
 
   const getSortOrderLabel = () => {
@@ -39,6 +52,16 @@ const SingleEdital= () => {
       default:
         return 'Selecionar Filtro';
     }
+  };
+
+  const handleAddClick = async () => {
+    await fetchMaterias(); // Carregar matérias antes de abrir o modal
+    setIsModalOpen(true);
+  };
+
+  const handleSaveMaterias = (selectedMaterias) => {
+    console.log('Matérias selecionadas:', selectedMaterias);
+    setIsModalOpen(false); // Fecha o modal
   };
 
   return (
@@ -67,10 +90,18 @@ const SingleEdital= () => {
           totalPages={totalPages}
           handlePageChange={handlePageChange}
           showIcon={true} /* Exibe o ícone apenas aqui */
+          onAddClick={handleAddClick}
           />
           <ItemListSingleEdital items={items} />
         </div>
         <RodapeConfig title="Configurações do Edital" />
+
+        <ModalAdicionarMaterias
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          items={materias}
+          onSave={handleSaveMaterias}
+        />
       </div>
       
     </div>
