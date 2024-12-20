@@ -1,15 +1,8 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Importa o useNavigate do React Router
 import '../App.css'; // Importa o CSS global
 
 function ItemList({ items }) {
-  const navigate = useNavigate(); // Hook para navegação
-
-  const handleEditClick = (id) => {
-    navigate(`/single-edital`); // Redireciona para a página de edição com o ID
-  };
-
   return (
     <div className="mt-4">
       {items.length > 0 ? (
@@ -17,13 +10,13 @@ function ItemList({ items }) {
           <thead>
             <tr>
               <th>
-                <i className="fas fa-flag me-2" /> Editais
+                <i className="fas fa-book me-2" /> Matérias
               </th>
               <th>
-                <i className="fas fa-book me-2" /> Data
+                <i className="fas fa-calendar-alt me-2" /> Data
               </th>
               <th>
-                <i className="fas fa-square me-2" /> Matérias
+                <i className="fas fa-square me-2" /> Tópicos
               </th>
               <th>
                 <i className="fas fa-cog me-2" /> Editar
@@ -33,19 +26,18 @@ function ItemList({ items }) {
           <tbody>
             {items.map((item) => (
               <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{new Date(item.data).toLocaleDateString('pt-BR')}</td>
+                <td>{item.nomeMateria}</td>
+                <td>
+                  {new Date(item.dataCriacao).toLocaleDateString('pt-BR')}
+                </td>
                 <td>
                   <Button className="table-btn-subitens">
-                    <span className="subitens-number">{item.subitens}</span>
-                    <span className="ms-2">{item.subitens === 1 ? 'Matéria' : 'Matérias'}</span>
+                    <span className="subitens-number">{item.numeroTopicos}</span>
+                    <span className="ms-2">{item.numeroTopicos === 1 ? 'Tópico' : 'Tópicos'}</span>
                   </Button>
                 </td>
                 <td>
-                  <Button
-                    className="table-btn-editar"
-                    onClick={() => handleEditClick(item.id)} // Redireciona ao clicar
-                  >
+                  <Button className="table-btn-editar">
                     <span className="me-2">Editar</span>
                     <i className="fas fa-cog" />
                   </Button>
