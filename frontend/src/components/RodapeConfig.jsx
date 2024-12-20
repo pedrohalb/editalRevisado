@@ -2,16 +2,37 @@ import React from 'react';
 import '../App.css';
 import { Button } from 'react-bootstrap';
 
-const RodapeConfig = ({ title = "Configurações do Edital" }) => {
+const RodapeConfig = ({
+  title = "Configurações do Edital",
+  totalItems,
+  selectedItems,
+}) => {
   return (
     <div className="footer-config">
+      {/* Título */}
       <div className="footer-config-title">
-      <i className="fas fa-cog m-3"></i>
+        <i className="fas fa-cog"></i>
         <span>{title}</span>
       </div>
 
+      {/* Espaço flexível */}
+      <div className="footer-config-spacer"></div>
+
+      {/* Informações de Tópicos (Exibe apenas se as propriedades forem fornecidas) */}
+      {totalItems !== undefined && selectedItems !== undefined && (
+        <div className="footer-config-info">
+          <div className="footer-config-info-box">
+            Tópicos Selecionados: {selectedItems}
+          </div>
+          <div className="footer-config-info-box">
+            Tópicos Disponíveis: {totalItems}
+          </div>
+        </div>
+      )}
+
+      {/* Botões */}
       <div className="footer-config-buttons">
-      <Button className="footer-config-button footer-config-button-cancel">
+        <Button className="footer-config-button footer-config-button-cancel">
           Cancelar
           <i className="fas fa-times"></i>
         </Button>
@@ -19,7 +40,6 @@ const RodapeConfig = ({ title = "Configurações do Edital" }) => {
           Salvar
           <i className="fas fa-check"></i>
         </Button>
-        
       </div>
     </div>
   );

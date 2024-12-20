@@ -1,8 +1,8 @@
 import React from 'react';
 import { InputGroup, Form, DropdownButton, Dropdown, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Importe o hook
+import { useNavigate } from 'react-router-dom';
 import PaginationControl from './PaginationControl';
-import '../App.css'; // Certifique-se de importar o CSS global
+import '../App.css';
 
 const Header = ({
   searchTerm,
@@ -13,23 +13,30 @@ const Header = ({
   currentPage,
   totalPages,
   handlePageChange,
+  title = 'Todos os Itens', // Título padrão
+  addButtonText = 'Adicionar Item', // Texto do botão padrão
+  onAddButtonClick, // Função personalizada para o clique do botão
 }) => {
-  const navigate = useNavigate(); // Inicialize o hook
+  const navigate = useNavigate();
 
-  const handleAddItemClick = () => {
-    navigate('/single-edital'); // Redirecione para a nova página
-  };
+  /*const handleAddItemClick = () => {
+    if (onAddButtonClick) {
+      onAddButtonClick();
+    } else {
+      navigate('/single-edital'); // Rota padrão caso não seja passado um handler
+    }
+  };*/
 
   return (
-    <div className="header d-flex justify-content-between align-items-center">
-      {/* Título à esquerda */}
-      <h1 className="header-title">
-        <i className="fas fa-list header-icon" />
-        Todos os Itens
+    <div className="header d-flex justify-content-between align-items-center px-3">
+      {/* Título dinâmico */}
+      <h1 className="header-title mb-0">
+        <i className="fas fa-list header-icon me-2" />
+        {title}
       </h1>
 
-      {/* Elementos à direita */}
-      <div className="header-controls">
+      {/* Controles alinhados à direita */}
+      <div className="header-controls d-flex align-items-center gap-3">
         {/* Barra de pesquisa */}
         <InputGroup className="search-bar">
           <InputGroup.Text className="search-icon">
@@ -62,13 +69,13 @@ const Header = ({
           <Dropdown.Item eventKey="desc">Ordem Alfabética (Z-A)</Dropdown.Item>
         </DropdownButton>
 
-        {/* Botão de adicionar item */}
+        {/* Botão dinâmico de adicionar item */}
         <Button
           variant="primary"
           className="add-item-btn"
-          onClick={handleAddItemClick} // Adicione o evento de clique
+          onClick={onAddButtonClick}
         >
-          Adicionar Item <i className="fas fa-plus ms-2" />
+          {addButtonText} <i className="fas fa-plus ms-2" />
         </Button>
       </div>
     </div>

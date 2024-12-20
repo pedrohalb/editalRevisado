@@ -27,7 +27,9 @@ function ItemList({ items }) {
             {items.map((item) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
-                <td>{item.data}</td>
+                <td>
+                  {new Date(item.data).toLocaleDateString('pt-BR')}
+                </td>
                 <td>
                   <Button className="table-btn-subitens">
                     <span className="subitens-number">{item.subitens}</span>
