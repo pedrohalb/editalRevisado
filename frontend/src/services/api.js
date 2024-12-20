@@ -62,3 +62,18 @@ export const getItems4 = (page = 1, limit = 5, search = '', sort = '') => {
 
 export const addItem4 = (data) => API_ITEMS4.post('/', data);
 export const deleteItem4 = (id) => API_ITEMS4.delete(`/${id}`);
+
+const API_ITEMS5 = axios.create({
+  baseURL: 'http://localhost:3001/api/items5', // Base URL para a tabela 'items4'
+});
+
+// Funções para 'items4'
+export const getItems5 = (page = 1, limit = 5, search = '', sort = '') => {
+  let query = `/?page=${page}&limit=${limit}`;
+  if (search) query += `&search=${encodeURIComponent(search)}`;
+  if (sort) query += `&sort=${sort}`;
+  return API_ITEMS5.get(query);
+};
+
+export const addItem5 = (data) => API_ITEMS5.post('/', data);
+export const deleteItem5 = (id) => API_ITEMS5.delete(`/${id}`);
