@@ -73,7 +73,7 @@ const ModalAdicionarMaterias = ({
         </div>
         <div id="modal-description" className="modal-body">
           {/* Barra de Pesquisa */}
-          <InputGroup className="search-bar mb-3">
+          <InputGroup className="modal-search-bar mb-3">
             <InputGroup.Text className="search-icon">
               <i className="fas fa-search" />
             </InputGroup.Text>

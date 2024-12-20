@@ -4,6 +4,8 @@ import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
 import ItemList from '../components/ItemList';
 import '../App.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const DefaultEdital= () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,6 +42,8 @@ const DefaultEdital= () => {
     }
   };
 
+  const navigate = useNavigate();
+
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar onToggle={(expanded) => setIsSidebarExpanded(expanded)} />
@@ -60,16 +64,19 @@ const DefaultEdital= () => {
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <Header
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            sortOrder={sortOrder}
-            setSortOrder={setSortOrder}
-            getSortOrderLabel={getSortOrderLabel}
-            currentPage={currentPage}
-            totalPages={totalPages}
-            handlePageChange={handlePageChange}
-          />
+         <Header
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+          getSortOrderLabel={getSortOrderLabel}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePageChange={handlePageChange}
+          title="Todos os Editais"
+          addButtonText="Adicionar Edital"
+          onAddButtonClick={() => navigate('/single-edital')}
+        />
           <ItemList items={items} />
         </div>
       </div>

@@ -2,7 +2,10 @@ import React from 'react';
 import { Table, Button } from 'react-bootstrap';
 import '../App.css'; // Importa o CSS global
 
-function ItemListSingleSelectTopic({ items }) {
+function ItemListSingleSelectTopic({ items, selectedItems, onSelectItem, onSelectAll }) {
+  // Verifica se todos os itens estão selecionados
+  const allSelected = items.every((item) => selectedItems.has(item.id));
+
   return (
     <div className="mt-4">
       {items.length > 0 ? (
@@ -10,36 +13,51 @@ function ItemListSingleSelectTopic({ items }) {
           <thead>
             <tr>
               <th>
-                <i className="fas fa-flag me-2" /> Itens
+                <div className="select-all">
+                  <div
+                    className={`select-box ${allSelected ? 'selected' : ''}`}
+                    onClick={onSelectAll}
+                  >
+                    {allSelected && <i className="fas fa-check"></i>}
+                  </div>
+                  Nome
+                </div>
+              </th>
+              <th>
+                <i className="fas fa-check-square me-2" /> PDFs
               </th>
               <th>
                 <i className="fas fa-calendar-alt me-2" /> Data
-              </th>
-              <th>
-                <i className="fas fa-square me-2" /> Subitens
-              </th>
-              <th>
-                <i className="fas fa-cog me-2" /> Editar
               </th>
             </tr>
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
-                <td>{item.data}</td>
+              <tr
+                key={item.id}
+                onClick={() => onSelectItem(item.id)}
+                className={`table-row ${selectedItems.has(item.id) ? 'selected' : ''}`}
+              >
                 <td>
-                  <Button className="table-btn-subitens">
-                    <span className="subitens-number">{item.subitens}</span>
-                    <span className="ms-2">{item.subitens === 1 ? 'Subitem' : 'Subitens'}</span>
-                  </Button>
+                  <div className="row-content">
+                    <div
+                      className={`select-box ${selectedItems.has(item.id) ? 'selected' : ''}`}
+                    >
+                      {selectedItems.has(item.id) && <i className="fas fa-check"></i>}
+                    </div>
+                    {item.nomeTopico}
+                  </div>
                 </td>
                 <td>
-                  <Button className="table-btn-editar">
-                    <span className="me-2">Editar</span>
-                    <i className="fas fa-cog" />
+                  <Button className="pdf-column-item">
+                    <i className="fas fa-file-pdf pdf-icon"></i>
+                    <span className="pdf-number ms-2">{item.numeroArquivos}</span>
+                    <span className="pdf-text ms-2">
+                      {item.numeroArquivos === 1 ? 'Arquivo' : 'Arquivos'}
+                    </span>
                   </Button>
                 </td>
+                <td>{new Date(item.dataCriacao).toLocaleDateString('pt-BR')}</td>
               </tr>
             ))}
           </tbody>
