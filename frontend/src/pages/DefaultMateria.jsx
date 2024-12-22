@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getItems5 } from '../services/api';
 import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
-import ItemList from '../components/ItemListDefaultEdital';
+import ItemList from '../components/ItemListDefaultMateria';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -75,7 +75,7 @@ const DefaultMateria= () => {
           handlePageChange={handlePageChange}
           title="Todas as Matérias"
           addButtonText="Adicionar Matéria"
-          //onAddButtonClick={() => navigate('/single-edital')}
+          onAddButtonClick={() => navigate('/single-materia')}
         />
           <ItemList items={items} />
         </div>
