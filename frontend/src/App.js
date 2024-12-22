@@ -4,6 +4,7 @@ import DefaultEdital from './pages/DefaultEdital';
 import SingleEdital from './pages/SingleEdital';
 import SingleSelectTopic from './pages/SingleSelectTopic'; // Importe a nova página
 import DefaultMateria from './pages/DefaultMateria';
+import SingleMateria from './pages/SingleMateria';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/single-edital" element={<SingleEdital />} />
         <Route path="/single-select-topic" element={<SingleSelectTopic />} /> {/* Nova rota */}
         <Route path="/default-materia" element={<DefaultMateria />} />
+        <Route path="/single-materia" element={<SingleMateria />} />
       </Routes>
     </Router>
   );

@@ -38,7 +38,7 @@ const Sidebar = ({ onToggle }) => {
           {isExpanded && <span>Editais</span>}
         </button>
         <button
-          className={`menu-item ${isActive(['/default-materia']) ? 'active' : ''}`}
+          className={`menu-item ${isActive(['/default-materia', '/single-materia']) ? 'active' : ''}`}
           onClick={() => handleNavigate('/default-materia')}
         >
           <i className="fas fa-layer-group" />

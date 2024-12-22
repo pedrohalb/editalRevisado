@@ -17,7 +17,7 @@ function ItemListSingleEdital({ items }) {
           <thead>
             <tr>
               <th>
-                <i className="fas fa-book me-2" /> Nome da Matéria
+                <i className="fas fa-book me-2" /> Nome
               </th>
               <th>
                 <i className="fas fa-square me-2" /> Tópicos Disponíveis

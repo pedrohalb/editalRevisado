@@ -1,8 +1,16 @@
 import React from 'react';
 import { Table, Button } from 'react-bootstrap';
 import '../App.css'; // Importa o CSS global
+import { useNavigate } from 'react-router-dom'; // Importa o useNavigate do React Router
 
 function ItemList({ items }) {
+
+const navigate = useNavigate(); // Hook para navegação
+
+const handleEditClick = (id) => {
+  navigate(`/single-materia`); // Redireciona para a página de edição com o ID
+};
+
   return (
     <div className="mt-4">
       {items.length > 0 ? (
@@ -37,7 +45,10 @@ function ItemList({ items }) {
                   </Button>
                 </td>
                 <td>
-                  <Button className="table-btn-editar">
+                  <Button 
+                  className="table-btn-editar"
+                  onClick={() => handleEditClick(item.id)} // Redireciona ao clicar
+                  >
                     <span className="me-2">Editar</span>
                     <i className="fas fa-cog" />
                   </Button>

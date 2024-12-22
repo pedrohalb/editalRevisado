@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { getItems2, getItems3 } from '../services/api';
+import { getItems6 } from '../services/api';
 import Sidebar from '../components/SideBar';
 import HeaderSingle from '../components/HeaderSingle';
-import ItemListSingleEdital from '../components/ItemListSingleEdital';
+import ItemListSingleMateria from '../components/ItemListSingleMateria';
 import '../App.css';
 import RodapeConfig from '../components/RodapeConfig'; // Importe o novo componente
-import ModalAdicionarMaterias from '../components/ModalAdicionarMaterias';
-import { FaBoxOpen } from 'react-icons/fa'; // Exemplo com react-icons
+import { FaClipboardList } from 'react-icons/fa'; // Exemplo com react-icons
 
-const SingleEdital= () => {
+const SingleMateria= () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [items, setItems] = useState([]);
@@ -24,8 +23,8 @@ const SingleEdital= () => {
 
   const fetchItems = async (page, search, sort) => {
     try {
-      const { data } = await getItems2(page, 11, search, sort);
-      setItems(data.items);
+      const { data } = await getItems6(page, 11, search, sort);
+      setItems(data.topics);
       setTotalPages(data.totalPages);
     } catch (error) {
       console.error('Erro ao buscar itens:', error);
@@ -55,16 +54,6 @@ const SingleEdital= () => {
     }
   };
 
-  const handleAddClick = async () => {
-    await fetchMaterias(); // Carregar matérias antes de abrir o modal
-    setIsModalOpen(true);
-  };
-
-  const handleSaveMaterias = (selectedMaterias) => {
-    console.log('Matérias selecionadas:', selectedMaterias);
-    setIsModalOpen(false); // Fecha o modal
-  };
-
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar onToggle={(expanded) => setIsSidebarExpanded(expanded)} />
@@ -86,29 +75,20 @@ const SingleEdital= () => {
           }}
         >
           <HeaderSingle
-          icon={<FaBoxOpen/>}
-          title="Materiais"
-          barraPesquisa="Nome do Edital"
+          icon={<FaClipboardList />}
+          barraPesquisa="Nome da Matéria"
+          title="Tópicos"
           currentPage={currentPage}
           totalPages={totalPages}
           handlePageChange={handlePageChange}
           showIcon={true} /* Exibe o ícone apenas aqui */
-          onAddClick={handleAddClick}
           />
-          <ItemListSingleEdital items={items} />
+          <ItemListSingleMateria items={items} />
         </div>
-        <RodapeConfig title="Configurações do Edital" />
-
-        <ModalAdicionarMaterias
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          items={materias}
-          onSave={handleSaveMaterias}
-        />
-      </div>
-      
+        <RodapeConfig title="Configurações da Matéria" />
+      </div>    
     </div>
   );
 };
 
-export default SingleEdital;
+export default SingleMateria;

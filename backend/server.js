@@ -6,6 +6,7 @@ const itemSingleEditalRoutes = require('./routes/itemSingleEditalRoutes'); // Im
 const materiasRoutes = require('./routes/materiasRoutes');
 const ItemListSingleSelectTopicRoutes = require('./routes/ItemListSingleSelectTopicRoutes');
 const ItemDefaultMateriaRoutes = require('./routes/ItemDefaultMateriaRoutes');
+const ItemSingleMateriaRoutes = require('./routes/ItemSingleMateriaRoutes');
 
 
 const app = express();
@@ -22,10 +23,11 @@ db.execute('SELECT 1')
 
 // Rotas
 app.use('/api/items', itemRoutes);
-app.use('/api/items2', itemSingleEditalRoutes); // Define rota para `items2`
+app.use('/api/items2', itemSingleEditalRoutes);
 app.use('/api/items3', materiasRoutes);
 app.use('/api/items4', ItemListSingleSelectTopicRoutes);
 app.use('/api/items5', ItemDefaultMateriaRoutes);
+app.use('/api/items6', ItemSingleMateriaRoutes);
 
 // Inicia o servidor
 const PORT = process.env.PORT || 3001;
