@@ -108,7 +108,7 @@ const SingleSelectTopic= () => {
             handlePageChange={handlePageChange}
             title="Tópicos Disponíveis"
             addButtonText="Adicionar Tópico"
-            //onAddButtonClick={() => navigate('/adicionar-topico')}
+            onAddButtonClick={() => navigate('/single-topic')}
           />
           <ItemList
             items={items}

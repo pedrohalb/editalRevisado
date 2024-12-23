@@ -56,8 +56,6 @@
 
 /* Botão de selecionar filtro (Dropdown Button) */
 
-/* Cor padrão do botão */
-
 /* Cor ao passar o mouse */
 .filter-dropdown .dropdown-toggle:hover {
   background-color: #6C757D!important; /* Fundo mais claro */
@@ -289,6 +287,66 @@
   outline: none;
   border-color: #495057;
   box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+}
+
+/*dropzin*/
+.header-single-dropdown .filter-dropdown .dropdown-toggle {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  min-width: 150px; /* Define largura mínima */
+  height: 44px;
+  text-align: center; /* Centraliza texto */
+  background-color: #f0f0f0;
+}
+
+/* Botão de selecionar filtro (Dropdown Button) */
+
+/* Cor ao passar o mouse */
+.header-single-dropdown .filter-dropdown .dropdown-toggle:hover {
+  background-color: #6C757D!important; /* Fundo mais claro */
+  color: #fff !important; /* Texto branco */
+}
+
+/* Cor ao clicar (foco ou ativo) */
+.header-single-dropdown .filter-dropdown .dropdown-toggle:active,
+.header-single-dropdown .filter-dropdown .dropdown-toggle:focus {
+  background-color: #495057 !important; /* Fundo escuro */
+  color: #fff !important; /* Texto branco */
+  box-shadow: 0 0 4px #495057 !important; /* Sombra ao redor */
+  outline: none !important; /* Remove o contorno azul */
+  border: none !important; /* Remove a borda */
+}
+
+
+/* Estilo para o item selecionado no Dropdown */
+.header-single-dropdown .dropdown-menu .dropdown-item.active {
+  background-color: #495057 !important; /* Mesma cor do botão de filtro */
+  color: #fff !important; /* Texto branco */
+  font-weight: bold !important; /* Negrito */
+}
+
+/* Estilo para itens no estado hover (passar o mouse) */
+.header-single-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #6C757D!important; /* Fundo um pouco mais claro */
+  color: #fff !important; /* Texto branco */
+  font-weight: bold !important; /* Negrito */
+}
+
+/* Estilo geral para itens do Dropdown */
+.header-single-dropdown .dropdown-menu .dropdown-item {
+  background-color: #f0f0f0 !important; /* Fundo padrão */
+  color: #495057 !important; /* Texto padrão */
+  font-weight: normal !important; /* Texto regular */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
+}
+
+.header-single-dropdown .dropdown-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 4px #495057;
+  border-color: #495057;
+  font-weight: bold !important;
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .header-single-title {
@@ -1186,7 +1244,6 @@ input[type="text"]:focus,
 .footer-config-button-save:hover {
   background-color: #6c757d;
 }
-
 
 /* Responsividade */
 @media (max-width: 576px) {
