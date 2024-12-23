@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { getItems6 } from '../services/api';
 import Sidebar from '../components/SideBar';
-import HeaderSingle from '../components/HeaderSingle';
+import HeaderSingle from '../components/HeaderSingleTopic';
 import ItemListSingleMateria from '../components/ItemListSingleMateria';
 import '../App.css';
 import RodapeConfig from '../components/RodapeConfig'; // Importe o novo componente
 import { FaClipboardList } from 'react-icons/fa'; // Exemplo com react-icons
-import { useNavigate } from 'react-router-dom';
+import FileRepeater from '../components/FileRepeater';
 
-const SingleMateria= () => {
+const SingleTopic= () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [items, setItems] = useState([]);
@@ -17,7 +17,8 @@ const SingleMateria= () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [materias, setMaterias] = useState([]);
-  const navigate = useNavigate(); // Hook para redirecionamento
+  const [fileList, setFileList] = useState([{ name: '', file: null }]);
+
 
   useEffect(() => {
     fetchItems(currentPage, searchTerm, sortOrder);
@@ -56,6 +57,14 @@ const SingleMateria= () => {
     }
   };
 
+  const handleAddRepeater = () => {
+    setFileList([...fileList, { name: '', file: null }]);
+  };
+
+  const handleFileChange = (newFileList) => {
+    setFileList(newFileList);
+  };
+
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar onToggle={(expanded) => setIsSidebarExpanded(expanded)} />
@@ -78,20 +87,23 @@ const SingleMateria= () => {
         >
           <HeaderSingle
           icon={<FaClipboardList />}
-          barraPesquisa="Nome da Matéria"
-          title="Tópicos"
+          barraPesquisa="Nome do Tópico"
+          title="Arquivos"
           currentPage={currentPage}
           totalPages={totalPages}
           handlePageChange={handlePageChange}
           showIcon={true} /* Exibe o ícone apenas aqui */
-          onAddClick={() => navigate('/single-topic')} // Redireciona para a página /single-topic
+          onAddClick={handleAddRepeater}
           />
+          <FileRepeater fileList={fileList} onFileListChange={handleFileChange} />
+          {/*}
           <ItemListSingleMateria items={items} />
+          */}
         </div>
-        <RodapeConfig title="Configurações da Matéria" />
+        <RodapeConfig title="Configurações do Tópico" />
       </div>    
     </div>
   );
 };
 
-export default SingleMateria;
+export default SingleTopic;

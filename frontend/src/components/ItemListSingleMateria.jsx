@@ -7,7 +7,7 @@ function ItemListSingleMateria({ items }) {
   const navigate = useNavigate(); // Hook para navegação
 
   const handleEditClick = (id) => {
-    navigate(`/single-edital`); // Redireciona para a página de edição com o ID
+    navigate(`/single-topic`); // Redireciona para a página de edição com o ID
   };
 
   return (
@@ -47,7 +47,7 @@ function ItemListSingleMateria({ items }) {
                 <td>
                   <Button
                     className="table-btn-editar"
-                    //onClick={() => handleEditClick(item.id)} // Redireciona ao clicar
+                    onClick={() => handleEditClick(item.id)} // Redireciona ao clicar
                   >
                     <span className="me-2">Editar</span>
                     <i className="fas fa-cog" />
