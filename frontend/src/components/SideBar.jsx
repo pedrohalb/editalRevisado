@@ -45,8 +45,8 @@ const Sidebar = ({ onToggle }) => {
           {isExpanded && <span>Matérias</span>}
         </button>
         <button
-          className={`menu-item ${isActive(['/configuracoes']) ? 'active' : ''}`}
-          onClick={() => handleNavigate('/configuracoes')}
+          className={`menu-item ${isActive(['/config']) ? 'active' : ''}`}
+          onClick={() => handleNavigate('/config')}
         >
           <i className="fas fa-cog" />
           {isExpanded && <span>Configurações</span>}

@@ -3,7 +3,7 @@ import { Table, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; // Importa o useNavigate do React Router
 import '../App.css'; // Importa o CSS global
 
-function ItemList({ items }) {
+function ItemListDefaultEdital({ items }) {
   const navigate = useNavigate(); // Hook para navegação
 
   const handleEditClick = (id) => {
@@ -20,7 +20,7 @@ function ItemList({ items }) {
                 <i className="fas fa-flag me-2" /> Editais
               </th>
               <th>
-                <i className="fas fa-book me-2" /> Data
+                <i className="fas fa-calendar-alt me-2" /> Data
               </th>
               <th>
                 <i className="fas fa-square me-2" /> Matérias
@@ -61,4 +61,4 @@ function ItemList({ items }) {
   );
 }
 
-export default ItemList;
+export default ItemListDefaultEdital;

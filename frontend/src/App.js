@@ -6,6 +6,7 @@ import SingleSelectTopic from './pages/SingleSelectTopic'; // Importe a nova pá
 import DefaultMateria from './pages/DefaultMateria';
 import SingleMateria from './pages/SingleMateria';
 import SingleTopic from './pages/SingleTopic';
+import Config from './pages/Config'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/default-materia" element={<DefaultMateria />} />
         <Route path="/single-materia" element={<SingleMateria />} />
         <Route path="/single-topic" element={<SingleTopic />} />
+        <Route path="/config" element={<Config />} />
       </Routes>
     </Router>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getItems } from '../services/api';
 import Sidebar from '../components/SideBar';
 import Header from '../components/Header';
-import ItemList from '../components/ItemList';
+import ItemList from '../components/ItemListDefaultEdital';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 
