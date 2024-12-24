@@ -1,3 +1,5 @@
+/*ELEMENTOS DA HEADER NORMAL*/
+
 /* HEADER */
 .header {
   width: 100%;
@@ -53,8 +55,6 @@
   min-width: 150px; /* Define largura mínima */
   text-align: center; /* Centraliza texto */
 }
-
-/* Botão de selecionar filtro (Dropdown Button) */
 
 /* Cor ao passar o mouse */
 .filter-dropdown .dropdown-toggle:hover {
@@ -200,6 +200,9 @@
   border-color: #495057 !important;
 }
 
+
+/*ELEMENTOS DA HEADER SINGLE*/
+
 /* HEADER SINGLE */
 .header-single {
   display: flex;
@@ -289,7 +292,7 @@
   box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
 }
 
-/*dropzin*/
+/*DROP DOWN DA SINGLE TOPIC*/
 .header-single-dropdown .filter-dropdown .dropdown-toggle {
   font-weight: bold;
   font-size: 16px;
@@ -299,8 +302,6 @@
   text-align: center; /* Centraliza texto */
   background-color: #f0f0f0;
 }
-
-/* Botão de selecionar filtro (Dropdown Button) */
 
 /* Cor ao passar o mouse */
 .header-single-dropdown .filter-dropdown .dropdown-toggle:hover {
@@ -317,7 +318,6 @@
   outline: none !important; /* Remove o contorno azul */
   border: none !important; /* Remove a borda */
 }
-
 
 /* Estilo para o item selecionado no Dropdown */
 .header-single-dropdown .dropdown-menu .dropdown-item.active {
@@ -406,7 +406,8 @@
   box-shadow: none;
 }
 
-/* TABLE */
+
+/* TABELA */
 .table {
   border-radius: 10px;
   overflow: hidden;
@@ -510,7 +511,207 @@ input[type="text"]:focus,
   transition: box-shadow 0.2s ease-in-out;
 }
 
-/* Sidebar */
+
+/*TABELA DE SINGLE*/
+/* Estilo para células de tópicos */
+.topics-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0f0f0; /* Cor de fundo do quadrado */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-weight: bold; /* Texto em negrito */
+  max-width: 70px; /* Define um limite de largura */
+} 
+
+/* Estilo para o número dentro da célula */
+.topics-number {
+  color: #495057; /* Cor do número */
+}
+
+/* Estilo para o ícone em Tópicos Ativos */
+.topics-cell .fa-check-circle {
+  color: #495057; /* Verde para ícone de confirmação */
+  font-size: 0.9rem; /* Tamanho do ícone */
+  transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+.topics-cell .fa-circle {
+  color: #495057; /* Verde para ícone de confirmação */
+  font-size: 0.9rem; /* Tamanho do ícone */
+  transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+/* Estilo para botão de editar */
+.table-btn-editar {
+  background-color: #495057 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  border: 1px solid #ccc !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease-in-out;
+}
+
+.table-btn-editar:hover {
+  background-color: #ccc !important;
+  color: #fff !important;
+  border-color: #ccc !important;
+}
+
+.table-btn-editar:focus {
+  outline: none !important;
+  box-shadow: 0 0 4px #495057 !important;
+  border-color: #495057 !important;
+}
+
+.table-btn-editar:active {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border-color: #495057 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.table-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaçamento entre os botões */
+}
+
+/* Estilo para botão de deletar */
+.table-btn-delete {
+  background-color: #495057 !important;
+  color: #fff !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table-btn-delete:hover {
+  background-color: #ccc !important;
+  color: #fff !important;
+}
+
+.table th:nth-child(1) {
+  width: 40%;
+}
+
+.table th:nth-child(2) {
+  width: 10%;
+}
+
+.table th:nth-child(3) {
+  width: 10%;
+}
+
+.table th:nth-child(4) {
+  width: 10%;
+}
+
+
+/*TABELA SINGLE TOPIC*/
+/* Botão para itens da coluna PDF */
+.pdf-column-item {
+  background-color: #f0f0f0;
+  border: none;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  gap: 0.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.pdf-column-item:hover {
+  background-color: #f0f0f0!important;
+  color: #000;
+}
+
+/* Ícone de PDF */
+.pdf-icon {
+  color: #495057; /* Vermelho típico de ícones de PDF */
+  font-size: 16px;
+}
+
+/* Texto do número de arquivos */
+.pdf-number {
+  font-size: 16px;
+  color: #495057;
+}
+
+/* Texto "arquivo/arquivos" */
+.pdf-text {
+  font-size: 16px;
+  color: #495057; /* Cinza claro */
+}
+
+/* Quadrado de seleção */
+/* Estilização do quadrado de seleção */
+.select-box {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #495057;
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.select-box.selected {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+.select-box i {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Alinhamento do conteúdo na célula */
+.row-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botão de selecionar todos */
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Linha da tabela selecionada */
+.table-row.selected {
+  background-color: #e9ecef; /* Cor clara para indicar seleção */
+}
+
+/* Adiciona transição ao hover e clique */
+.table-row {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #f1f3f5;
+}
+
+
+/* SIDE BAR*/
 .sidebar {
   background-color: #495057;
   color: transparent;
@@ -629,108 +830,6 @@ input[type="text"]:focus,
   color: #fff;
 }
 
-/*TABELA DE SINGLEE*/
-/* Estilo para células de tópicos */
-.topics-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #f0f0f0; /* Cor de fundo do quadrado */
-  padding: 5px 10px; /* Espaçamento interno */
-  border-radius: 5px; /* Bordas arredondadas */
-  font-weight: bold; /* Texto em negrito */
-  max-width: 70px; /* Define um limite de largura */
-} 
-
-/* Estilo para o número dentro da célula */
-.topics-number {
-  color: #495057; /* Cor do número */
-}
-
-/* Estilo para o ícone em Tópicos Ativos */
-.topics-cell .fa-check-circle {
-  color: #495057; /* Verde para ícone de confirmação */
-  font-size: 0.9rem; /* Tamanho do ícone */
-  transition: color 0.3s ease; /* Transição suave para hover */
-}
-
-.topics-cell .fa-circle {
-  color: #495057; /* Verde para ícone de confirmação */
-  font-size: 0.9rem; /* Tamanho do ícone */
-  transition: color 0.3s ease; /* Transição suave para hover */
-}
-
-/* Estilo para botão de editar */
-.table-btn-editar {
-  background-color: #495057 !important;
-  color: #fff !important;
-  font-weight: bold !important;
-  border: 1px solid #ccc !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.2s ease-in-out;
-}
-
-.table-btn-editar:hover {
-  background-color: #ccc !important;
-  color: #fff !important;
-  border-color: #ccc !important;
-}
-
-.table-btn-editar:focus {
-  outline: none !important;
-  box-shadow: 0 0 4px #495057 !important;
-  border-color: #495057 !important;
-}
-
-.table-btn-editar:active {
-  background-color: #495057 !important;
-  color: #fff !important;
-  border-color: #495057 !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.table-action-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Espaçamento entre os botões */
-}
-
-/* Estilo para botão de deletar */
-.table-btn-delete {
-  background-color: #495057 !important;
-  color: #fff !important;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.table-btn-delete:hover {
-  background-color: #ccc !important;
-  color: #fff !important;
-}
-
-.table th:nth-child(1) {
-  width: 40%;
-}
-
-.table th:nth-child(2) {
-  width: 10%;
-}
-
-.table th:nth-child(3) {
-  width: 10%;
-}
-
-.table th:nth-child(4) {
-  width: 10%;
-}
 
 /* RODAPÉ CONFIGURAÇÕES */
 .footer-config {
@@ -807,6 +906,100 @@ input[type="text"]:focus,
 .footer-config-button-cancel:active {
   background-color: #f0f0f0 !important; /* Cor ao clicar */
 }
+
+
+/*RODAPÉ DA TELA DE TÓPICOS*/
+
+/* Informações de tópicos no rodapé */
+/* Rodapé principal */
+.footer-config {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+/* Título do rodapé */
+.footer-config-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #495057;
+}
+
+.footer-config-title i {
+  margin-right: 0.5rem;
+}
+
+/* Espaço flexível para alinhar os elementos */
+.footer-config-spacer {
+  flex-grow: 1; /* Ocupa todo o espaço disponível */
+}
+
+/* Informações de tópicos */
+.footer-config-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-config-info-box {
+  background-color: #f8f9fa; /* Fundo claro */
+  border: 1px solid #ddd; /* Borda fina */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: bold;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botões */
+.footer-config-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-config-button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.footer-config-button-cancel {
+  background-color: #f0f0f0;
+  color: #495057;
+  border: none;
+}
+
+.footer-config-button-cancel:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.footer-config-button-save {
+  background-color: #495057;
+  color: #fff;
+  border: none;
+}
+
+.footer-config-button-save:hover {
+  background-color: #6c757d;
+}
+
 
 /* MODAL */
 .modal-overlay {
@@ -1057,195 +1250,10 @@ input[type="text"]:focus,
   background-color: #f0f0f0 !important; /* Cor ao clicar */
 }
 
-/*TABELA TÓPICOS*/
-/* Botão para itens da coluna PDF */
-.pdf-column-item {
-  background-color: #f0f0f0;
-  border: none;
-  color: #495057;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 14px;
-  gap: 0.5rem;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
 
-.pdf-column-item:hover {
-  background-color: #f0f0f0!important;
-  color: #000;
-}
+/*RESPONSIVIADE*/
 
-/* Ícone de PDF */
-.pdf-icon {
-  color: #495057; /* Vermelho típico de ícones de PDF */
-  font-size: 16px;
-}
-
-/* Texto do número de arquivos */
-.pdf-number {
-  font-size: 16px;
-  color: #495057;
-}
-
-/* Texto "arquivo/arquivos" */
-.pdf-text {
-  font-size: 16px;
-  color: #495057; /* Cinza claro */
-}
-
-/* Quadrado de seleção */
-/* Estilização do quadrado de seleção */
-.select-box {
-  width: 15px;
-  height: 15px;
-  border: 2px solid #495057;
-  border-radius: 4px;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.select-box.selected {
-  background-color: #495057;
-  border-color: #495057;
-}
-
-.select-box i {
-  color: #fff;
-  font-size: 14px;
-}
-
-/* Alinhamento do conteúdo na célula */
-.row-content {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Botão de selecionar todos */
-.select-all {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-/* Linha da tabela selecionada */
-.table-row.selected {
-  background-color: #e9ecef; /* Cor clara para indicar seleção */
-}
-
-/* Adiciona transição ao hover e clique */
-.table-row {
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.table-row:hover {
-  background-color: #f1f3f5;
-}
-
-/*FOOTER DA TELA DE TÓPICOS*/
-
-/* Informações de tópicos no rodapé */
-
-
-/* Rodapé principal */
-.footer-config {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
-  border-top: 1px solid #ddd;
-  border-radius: 10px;
-  gap: 1rem;
-}
-
-/* Título do rodapé */
-.footer-config-title {
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #495057;
-}
-
-.footer-config-title i {
-  margin-right: 0.5rem;
-}
-
-/* Espaço flexível para alinhar os elementos */
-.footer-config-spacer {
-  flex-grow: 1; /* Ocupa todo o espaço disponível */
-}
-
-/* Informações de tópicos */
-.footer-config-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-config-info-box {
-  background-color: #f8f9fa; /* Fundo claro */
-  border: 1px solid #ddd; /* Borda fina */
-  border-radius: 10px; /* Bordas arredondadas */
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  font-weight: bold;
-  color: #495057;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Botões */
-.footer-config-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-config-button {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.2s ease;
-}
-
-.footer-config-button-cancel {
-  background-color: #f0f0f0;
-  color: #495057;
-  border: none;
-}
-
-.footer-config-button-cancel:hover {
-  background-color: #6c757d;
-  color: #fff;
-}
-
-.footer-config-button-save {
-  background-color: #495057;
-  color: #fff;
-  border: none;
-}
-
-.footer-config-button-save:hover {
-  background-color: #6c757d;
-}
-
-/* Responsividade */
+/* Responsividade Modal */
 @media (max-width: 576px) {
   .modal-content {
     width: 100%;
@@ -1278,7 +1286,7 @@ input[type="text"]:focus,
 }
 
 
-/* RESPONSIVIDADE GERAL */
+/* RESPONSIVIDADE HEADER 1 E TABELA 1 */
 @media (max-width: 1200px) {
   .header-controls {
     flex-wrap: wrap;
@@ -1296,6 +1304,8 @@ input[type="text"]:focus,
   }
 }
 
+
+/*Responsividade Header 2 e Side Bar 1*/
 @media (max-width: 992px) {
   .header {
     flex-direction: column;
@@ -1340,7 +1350,8 @@ input[type="text"]:focus,
   }
 }
 
-/* RESPONSIVIDADE */
+
+/* RESPONSIVIDADE HEADER SINGLE*/
 @media (max-width: 992px) {
   .header-single-top {
     flex-direction: column;
@@ -1371,7 +1382,6 @@ input[type="text"]:focus,
   }
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .header-single-top {
     flex-direction: column;
@@ -1405,6 +1415,8 @@ input[type="text"]:focus,
   }
 }
 
+
+/*Responsividade Side Bar 2 e Tabela 2*/
 @media (max-width: 768px) {
   .sidebar {
     position: relative;
@@ -1446,6 +1458,8 @@ input[type="text"]:focus,
   }
 }
 
+
+/*RESPONSIVIDADE HEADER 2*/
 @media (max-width: 576px) {
   .header {
     text-align: center;
@@ -1528,6 +1542,8 @@ input[type="text"]:focus,
   }
 }
 
+
+/*RESPONSIVIDADE SIDE BAR 3*/
 /* Sidebar sempre expandida em telas menores */
 @media (max-width: 768px) {
   .sidebar {
@@ -1550,6 +1566,7 @@ input[type="text"]:focus,
     display: none; /* Esconde o botão de alternar */
   }
 }
+
 
 /* Responsividade para o rodapé */
 @media (max-width: 768px) {
