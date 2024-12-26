@@ -6,9 +6,14 @@ const RodapeConfig = ({
   title = "Configurações do Edital",
   totalItems,
   selectedItems,
+  isSidebarExpanded, // Recebe o estado da sidebar
 }) => {
   return (
-    <div className="footer-config">
+    <div
+      className={`footer-config ${
+        isSidebarExpanded ? 'expanded' : 'collapsed'
+      }`}
+    >
       {/* Título */}
       <div className="footer-config-title">
         <i className="fas fa-cog"></i>
@@ -18,7 +23,7 @@ const RodapeConfig = ({
       {/* Espaço flexível */}
       <div className="footer-config-spacer"></div>
 
-      {/* Informações de Tópicos (Exibe apenas se as propriedades forem fornecidas) */}
+      {/* Informações de Tópicos */}
       {totalItems !== undefined && selectedItems !== undefined && (
         <div className="footer-config-info">
           <div className="footer-config-info-box">
@@ -44,5 +49,6 @@ const RodapeConfig = ({
     </div>
   );
 };
+
 
 export default RodapeConfig;

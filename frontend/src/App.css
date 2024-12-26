@@ -832,22 +832,33 @@ input[type="text"]:focus,
 
 
 /* RODAPÉ CONFIGURAÇÕES */
+/* Rodapé fixo */
 .footer-config {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed; /* Torna o rodapé fixo */
-  bottom: 0; /* Fixa na parte inferior da tela */
-  left: 0; /* Alinha na borda esquerda */
-  right: 0; /* Alinha na borda direita */
-  width: 100%; /* Garante que ocupe toda a largura da tela */
-  background-color: #fff; /* Cor de fundo */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
-  border-top: 1px solid #ddd; /* Borda superior */
-  z-index: 1000; /* Garante que esteja acima de outros elementos */
+  border-top: 1px solid #ddd;
+  z-index: 1000;
+  height: 4rem; /* Altura fixa do rodapé */
+  transition: all 0.3s ease; /* Transição suave para mudanças */
 }
 
+/* Rodapé quando a sidebar está expandida */
+.footer-config.expanded {
+  left: 200px; /* Mesma largura da sidebar expandida */
+  width: calc(100% - 200px); /* Largura dinâmica */
+}
+
+/* Rodapé quando a sidebar está minimizada */
+.footer-config.collapsed {
+  left: 80px; /* Mesma largura da sidebar minimizada */
+  width: calc(100% - 80px); /* Largura dinâmica */
+}
 
 .footer-config-title {
   display: flex;
@@ -916,22 +927,33 @@ input[type="text"]:focus,
 
 /* Informações de tópicos no rodapé */
 /* Rodapé principal */
+/* Rodapé fixo */
 .footer-config {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed; /* Torna o rodapé fixo */
-  bottom: 0; /* Fixa na parte inferior da tela */
-  left: 0; /* Alinha na borda esquerda */
-  right: 0; /* Alinha na borda direita */
-  width: 100%; /* Garante que ocupe toda a largura da tela */
-  background-color: #fff; /* Cor de fundo */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
-  border-top: 1px solid #ddd; /* Borda superior */
-  z-index: 1000; /* Garante que esteja acima de outros elementos */
+  border-top: 1px solid #ddd;
+  z-index: 1000;
+  height: 4rem; /* Altura fixa do rodapé */
+  transition: all 0.3s ease; /* Transição suave para mudanças */
 }
 
+/* Rodapé quando a sidebar está expandida */
+.footer-config.expanded {
+  left: 200px; /* Mesma largura da sidebar expandida */
+  width: calc(100% - 200px); /* Largura dinâmica */
+}
+
+/* Rodapé quando a sidebar está minimizada */
+.footer-config.collapsed {
+  left: 80px; /* Mesma largura da sidebar minimizada */
+  width: calc(100% - 80px); /* Largura dinâmica */
+}
 
 /* Título do rodapé */
 .footer-config-title {
@@ -955,7 +977,8 @@ input[type="text"]:focus,
 .footer-config-info {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem; /* Espaçamento entre os itens */
+  margin-right: 2rem; /* Adiciona o espaçamento do botão de cancelar */
 }
 
 .footer-config-info-box {

@@ -118,6 +118,7 @@ const SingleSelectTopic= () => {
           />
         </div>
         <RodapeConfig
+          isSidebarExpanded={isSidebarExpanded} 
           title="Configurações da Matéria"
           totalItems={totalItems} // Total de itens no sistema
           selectedItems={selectedItems.size} // Total de itens selecionados

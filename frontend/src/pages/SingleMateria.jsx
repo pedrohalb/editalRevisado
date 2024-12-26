@@ -88,7 +88,9 @@ const SingleMateria= () => {
           />
           <ItemListSingleMateria items={items} />
         </div>
-        <RodapeConfig title="Configurações da Matéria" />
+        <RodapeConfig 
+        isSidebarExpanded={isSidebarExpanded} 
+        title="Configurações da Matéria" />
       </div>    
     </div>
   );

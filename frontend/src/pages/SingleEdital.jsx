@@ -97,7 +97,9 @@ const SingleEdital= () => {
           />
           <ItemListSingleEdital items={items} />
         </div>
-        <RodapeConfig title="Configurações do Edital" />
+        <RodapeConfig 
+        isSidebarExpanded={isSidebarExpanded} 
+        title="Configurações do Edital" />
 
         <ModalAdicionarMaterias
           isOpen={isModalOpen}

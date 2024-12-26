@@ -100,7 +100,9 @@ const SingleTopic= () => {
           <ItemListSingleMateria items={items} />
           */}
         </div>
-        <RodapeConfig title="Configurações do Tópico" />
+        <RodapeConfig 
+        isSidebarExpanded={isSidebarExpanded} 
+        title="Configurações do Tópico" />
       </div>    
     </div>
   );
