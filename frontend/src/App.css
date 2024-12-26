@@ -834,16 +834,20 @@ input[type="text"]:focus,
 /* RODAPÉ CONFIGURAÇÕES */
 .footer-config {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  position: fixed; /* Torna o rodapé fixo */
+  bottom: 0; /* Fixa na parte inferior da tela */
+  left: 0; /* Alinha na borda esquerda */
+  right: 0; /* Alinha na borda direita */
+  width: 100%; /* Garante que ocupe toda a largura da tela */
+  background-color: #fff; /* Cor de fundo */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
   padding: 1rem 2rem;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
-  border-radius: 10px;
+  border-top: 1px solid #ddd; /* Borda superior */
+  z-index: 1000; /* Garante que esteja acima de outros elementos */
 }
+
 
 .footer-config-title {
   display: flex;
@@ -915,13 +919,19 @@ input[type="text"]:focus,
 .footer-config {
   display: flex;
   align-items: center;
-  background-color: #fff;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  position: fixed; /* Torna o rodapé fixo */
+  bottom: 0; /* Fixa na parte inferior da tela */
+  left: 0; /* Alinha na borda esquerda */
+  right: 0; /* Alinha na borda direita */
+  width: 100%; /* Garante que ocupe toda a largura da tela */
+  background-color: #fff; /* Cor de fundo */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
   padding: 1rem 2rem;
-  border-top: 1px solid #ddd;
-  border-radius: 10px;
-  gap: 1rem;
+  border-top: 1px solid #ddd; /* Borda superior */
+  z-index: 1000; /* Garante que esteja acima de outros elementos */
 }
+
 
 /* Título do rodapé */
 .footer-config-title {
